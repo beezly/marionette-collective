@@ -49,7 +49,7 @@ install:
 	ginstall -g bin $(CURDIR)/mcollective.init $(DESTDIR)/opt/csw/lib/svc/method/svc-cswmcollectived
 	ginstall -g bin $(CURDIR)/cswmcollectived.xml $(DESTDIR)/var/opt/csw/svc/manifest/network
 
-	(cat prototype.head; pkgproto $(DESTDIR)=/ ) > solaris/prototype
+	(cat prototype.head; pkgproto "$(DESTDIR)=" ) > solaris/prototype
 	mkdir $(PKGDIR) || true
 	ginstall postinstall solaris/
 	ginstall postremove solaris/
